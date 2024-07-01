@@ -5,20 +5,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BOTONES : MonoBehaviour
+public class ScriptUI : MonoBehaviour
 {
-    public GameObject txt1;
-    public GameObject txt2;
     public InputField inputField;
-    public GameObject titulo;
-    public GameObject escribirunnumero;
+    public GameObject panelNumero;
     public GameObject panelError;
-    public GameObject cantidadnro;
-
+    public GameObject titulo;
+    public GameObject responder;
+    public GameObject cantidadT;
+    public GameObject textoGood;
+    public GameObject textoBad;
 
     void Start()
     {
-        escribirunnumero.SetActive(false);
+        panelNumero.SetActive(false);
         panelError.SetActive(false);
     }
 
@@ -29,24 +29,26 @@ public class BOTONES : MonoBehaviour
         if (int.TryParse(inputText, out int result))
         {
             titulo.SetActive(false);
-            cantidadnro.SetActive(false);
-            escribirunnumero.SetActive(true);
+            responder.SetActive(false);
+            cantidadT.SetActive(false);
+            panelNumero.SetActive(true);
             panelError.SetActive(false);
 
             if (Convert.ToInt32(inputText) == ScriptObjetos.cantidad)
             {
-                txt2.SetActive(false);
+                textoBad.SetActive(false);
             }
             else
             {
-                txt1.SetActive(false);
+                textoGood.SetActive(false);
             }
         }
         else
         {
             titulo.SetActive(false);
-            cantidadnro.SetActive(false);
-            escribirunnumero.SetActive(false);
+            responder.SetActive(false);
+            cantidadT.SetActive(false);
+            panelNumero.SetActive(false);
             panelError.SetActive(true);
         }
     }
@@ -54,13 +56,14 @@ public class BOTONES : MonoBehaviour
     public void Ok()
     {
         titulo.SetActive(true);
-        cantidadnro.SetActive(true);
-        escribirunnumero.SetActive(false);
+        responder.SetActive(true);
+        cantidadT.SetActive(true);
+        panelNumero.SetActive(false);
         panelError.SetActive(false);
     }
 
     public void ReRun()
     {
-        SceneManager.LoadScene("CaenObjetos");
+        SceneManager.LoadScene("CAIDA");
     }
 }
