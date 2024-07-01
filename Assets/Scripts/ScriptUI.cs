@@ -8,18 +8,18 @@ using UnityEngine.SceneManagement;
 public class ScriptUI : MonoBehaviour
 {
     public InputField inputField;
-    public GameObject panelNumero;
-    public GameObject panelError;
-    public GameObject titulo;
+    public GameObject txtacertaste;
+    public GameObject txtreintentar;
     public GameObject responder;
     public GameObject cantidadT;
-    public GameObject textoGood;
-    public GameObject textoBad;
+    public GameObject paneldespues;
+    public GameObject panelnada;
+    public GameObject titulo;
 
     void Start()
     {
-        panelNumero.SetActive(false);
-        panelError.SetActive(false);
+        paneldespues.SetActive(false);
+        panelnada.SetActive(false);
     }
 
     public void Mostrar()
@@ -31,16 +31,16 @@ public class ScriptUI : MonoBehaviour
             titulo.SetActive(false);
             responder.SetActive(false);
             cantidadT.SetActive(false);
-            panelNumero.SetActive(true);
-            panelError.SetActive(false);
+            paneldespues.SetActive(true);
+            panelnada.SetActive(false);
 
             if (Convert.ToInt32(inputText) == ScriptObjetos.cantidad)
             {
-                textoBad.SetActive(false);
+                txtreintentar.SetActive(false);
             }
             else
             {
-                textoGood.SetActive(false);
+                txtacertaste.SetActive(false);
             }
         }
         else
@@ -48,8 +48,8 @@ public class ScriptUI : MonoBehaviour
             titulo.SetActive(false);
             responder.SetActive(false);
             cantidadT.SetActive(false);
-            panelNumero.SetActive(false);
-            panelError.SetActive(true);
+            paneldespues.SetActive(false);
+            panelnada.SetActive(true);
         }
     }
 
@@ -58,8 +58,8 @@ public class ScriptUI : MonoBehaviour
         titulo.SetActive(true);
         responder.SetActive(true);
         cantidadT.SetActive(true);
-        panelNumero.SetActive(false);
-        panelError.SetActive(false);
+        paneldespues.SetActive(false);
+        panelnada.SetActive(false);
     }
 
     public void ReRun()
