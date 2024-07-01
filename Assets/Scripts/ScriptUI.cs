@@ -64,6 +64,6 @@ public class ScriptUI : MonoBehaviour
 
     public void ReRun()
     {
-        SceneManager.LoadScene("CAIDA");
+        SceneManager.LoadScene("SampleScene");
     }
 }

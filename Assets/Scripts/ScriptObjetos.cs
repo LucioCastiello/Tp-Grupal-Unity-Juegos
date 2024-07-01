@@ -28,7 +28,7 @@ public class ScriptObjetos : MonoBehaviour
         }
 
         yield return new WaitForSeconds(delayDeCambio);
-        SceneManager.LoadScene("RESPUESTA");
+        SceneManager.LoadScene("UI");
     }
 
     void Update()
